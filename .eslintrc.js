@@ -17,10 +17,8 @@ module.exports = {
   // add your custom rules here
   rules: {
     'vue/multi-word-component-names': 'off',
-    'quotes': 'off',
     'comma-dangle': 'off',
     'arrow-parens': 'off',
     'space-before-function-paren': 0,
-    'semi': ['error', 'always'],
   }
 };
