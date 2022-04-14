@@ -6,11 +6,11 @@ module.exports = {
   },
   parserOptions: {
     parser: '@babel/eslint-parser',
-    requireConfigFile: false
+    requireConfigFile: false,
   },
   extends: [
     '@nuxtjs',
-    'plugin:nuxt/recommended'
+    'plugin:nuxt/recommended',
   ],
   plugins: [
   ],
@@ -21,6 +21,6 @@ module.exports = {
     'comma-dangle': 'off',
     'arrow-parens': 'off',
     'space-before-function-paren': 0,
-    'semi': ['error', 'always']
+    'semi': ['error', 'always'],
   }
-}
+};
