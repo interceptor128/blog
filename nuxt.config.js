@@ -1,6 +1,6 @@
-require('dotenv').config();
-const { API_KEY } = process.env;
-const axios = require('axios');
+require('dotenv').config()
+const { API_KEY } = process.env
+const axios = require('axios')
 
 export default {
   // API Key
@@ -76,27 +76,27 @@ export default {
   markdownit: {
     html: true,
     injected: true,
-    preset: 'default',
+    preset: 'default'
   },
 
   generate: {
     routes() {
       const blog = axios
-        .get("https://septum.microcms.io/api/v1/articles", {
-          headers: { "X-MICROCMS-API-KEY": process.env.API_KEY }
+        .get('https://septum.microcms.io/api/v1/articles', {
+          headers: { 'X-MICROCMS-API-KEY': process.env.API_KEY }
         })
-        .then(res => {
-          return res.data.contents.map(blog => {
-            return "/article/" + blog.id;
-          });
-        });
-      return Promise.all([blog]).then(values => {
-        return values.join().split(",");
-      });
+        .then((res) => {
+          return res.data.contents.map((blog) => {
+            return '/article/' + blog.id
+          })
+        })
+      return Promise.all([blog]).then((values) => {
+        return values.join().split(',')
+      })
     }
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-  },
+  }
 }
