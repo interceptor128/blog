@@ -1,6 +1,6 @@
-require('dotenv').config();
-const { API_KEY } = process.env;
-//const axios = require('axios');
+require('dotenv').config()
+const { API_KEY } = process.env
+const axios = require('axios')
 
 export default {
   // API Key
@@ -87,16 +87,16 @@ export default {
         })
         .then((res) => {
           return res.data.contents.map((blog) => {
-            return '/article/' + blog.id;
-          });
-        });
+            return '/article/' + blog.id
+          })
+        })
       return Promise.all([blog]).then((values) => {
-        return values.join().split(',');
-      });
+        return values.join().split(',')
+      })
     }
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   }
-};
+}

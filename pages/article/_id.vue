@@ -8,26 +8,26 @@
   </div>
 </template>
 <script>
-import axios from "axios";
+import axios from 'axios'
 
 export default {
   data() {
     return {
       items: [],
-    };
+    }
   },
   async asyncData({ params }) {
     const { data } = await axios.get(
       `https://septum.microcms.io/api/v1/articles/${params.id}`,
       {
-        headers: { "X-MICROCMS-API-KEY": process.env.API_KEY },
+        headers: { 'X-MICROCMS-API-KEY': process.env.API_KEY },
       }
-    );
+    )
     return {
       item: data,
-    };
+    }
   },
-};
+}
 </script>
 <style>
 h1 {

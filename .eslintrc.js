@@ -6,11 +6,11 @@ module.exports = {
   },
   parserOptions: {
     parser: '@babel/eslint-parser',
-    requireConfigFile: false,
+    requireConfigFile: false
   },
   extends: [
     '@nuxtjs',
-    'plugin:nuxt/recommended',
+    'plugin:nuxt/recommended'
   ],
   plugins: [
   ],
@@ -19,6 +19,6 @@ module.exports = {
     'vue/multi-word-component-names': 'off',
     'comma-dangle': 'off',
     'arrow-parens': 'off',
-    'space-before-function-paren': 0,
+    'space-before-function-paren': 0
   }
-};
+}

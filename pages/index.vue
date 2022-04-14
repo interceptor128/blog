@@ -9,25 +9,25 @@
   </div>
 </template>
 <script>
-import axios from "axios";
+import axios from 'axios'
 export default {
   data() {
     return {
       items: [],
-    };
+    }
   },
   async asyncData() {
     const { data } = await axios.get(
-      "https://septum.microcms.io/api/v1/articles",
+      'https://septum.microcms.io/api/v1/articles',
       {
-        headers: { "X-MICROCMS-API-KEY": process.env.API_KEY },
+        headers: { 'X-MICROCMS-API-KEY': process.env.API_KEY },
       }
-    );
+    )
     return {
       items: data.contents,
-    };
+    }
   },
-};
+}
 </script>
 
 <style>
