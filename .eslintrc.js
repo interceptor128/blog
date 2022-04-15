@@ -15,5 +15,11 @@ module.exports = {
   plugins: [
   ],
   // add your custom rules here
-  rules: {}
+  rules: {
+    'nuxt/no-cjs-in-config': 'off',
+    'vue/multi-word-component-names': 'off',
+    'comma-dangle': 'off',
+    'arrow-parens': 'off',
+    'space-before-function-paren': 0
+  }
 }
