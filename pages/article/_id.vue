@@ -1,33 +1,36 @@
 <template>
   <div>
     <h1>{{ item.title }}</h1>
-    <div v-html="$md.render(item.content)"></div>
+    <div class="line-numbers" v-html="$md.render(item.content)"></div>
     <nuxt-link :to="'/'">
       <h2>戻る</h2>
     </nuxt-link>
   </div>
 </template>
 <script>
-import axios from "axios";
-
+import axios from 'axios'
+import Prism from '~/plugins/prism'
 export default {
   data() {
     return {
       items: [],
-    };
+    }
   },
   async asyncData({ params }) {
     const { data } = await axios.get(
       `https://septum.microcms.io/api/v1/articles/${params.id}`,
       {
-        headers: { "X-MICROCMS-API-KEY": process.env.API_KEY },
+        headers: { 'X-MICROCMS-API-KEY': process.env.API_KEY },
       }
-    );
+    )
     return {
       item: data,
-    };
+    }
   },
-};
+  mounted() {
+    Prism.highlightAll()
+  },
+}
 </script>
 <style>
 h1 {
