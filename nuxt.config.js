@@ -1,6 +1,6 @@
-require("dotenv").config();
-const { API_KEY } = process.env;
-const axios = require("axios");
+require("dotenv").config()
+const { API_KEY } = process.env
+const axios = require("axios")
 
 export default {
   // API Key
@@ -76,7 +76,7 @@ export default {
   markdownit: {
     html: true,
     injected: true,
-    preset: 'default',
+    preset: 'default'
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
